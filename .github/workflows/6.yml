@@ -1,15 +1,21 @@
 name: Connecting to Remote Linux Servers
 on: workflow_dispatch
+env:
+  pvt_key: ${{ secrets.LINUX_PVT_KEY }}
+  OS_USER: ${{ vars.LINUX_USERNAME }}  
 jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
     - name: Store SPrivatekey
       run: |
-         echo "${{ secrets.LINUX_PVT_KEY }}" > key1
+         echo "${{ env.pvt_key }}" > key1
          chmod 400 key1
          ls -lrt
     - name: Connecting to Linux Server
       run: |
-         echo "username is ${{ vars.LINUX_USERNAME }}"
-         ssh -i key1 -o StrictHostKeyChecking=no ${{ vars.LINUX_USERNAME }}@13.212.247.162 touch svreddy     
+         ssh -i key1 -o StrictHostKeyChecking=no ${{ env.OS_USER }}@13.212.247.162 touch svreddy     
+         
+         
+         
+         
