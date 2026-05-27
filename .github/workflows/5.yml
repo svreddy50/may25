@@ -3,5 +3,7 @@ on: workflow_dispatch
 jobs:
   job1:
     runs-on: ubuntu-latest
-    run: |
-       echo "DB Passwd is ${{ secrets.DB_PASSWD }}"
+    steps:
+    - name: Print Secrets
+      run: |
+         echo "DB Passwd is ${{ secrets.DB_PASSWD }}"
