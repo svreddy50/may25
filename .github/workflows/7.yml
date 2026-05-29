@@ -6,9 +6,6 @@ env:
 jobs:
   CI:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
     steps:
     - name: Checkout the Code
       run: |
@@ -34,7 +31,7 @@ jobs:
     - name: Image Push 
       run: |
          docker login ghcr.io -u ${{ env.DUSER }} -p ${{ env.DR_PASSWD }}
-         docker push ghcr.io/${{ env.DUSER }}/imagex:vx
+         docker push ghcr.io/${{ env.DUSER }}/imagex:vy
                   
           
          
