@@ -19,7 +19,7 @@ jobs:
     - name: Image build
       run: |
         docker info 
-        docker build -i docker.io/${{ env.DUSER }}/imagex:vx
+        docker build -t docker.io/${{ env.DUSER }}/imagex:vx
         docker images
     - name: Image Push 
       run: |
