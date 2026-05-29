@@ -23,8 +23,9 @@ jobs:
          echo "Application Build Started"
          echo "Application Build Complted"
     - name: Image build
+      working-directory: ./may25
       run: |
-        cd may25
+        pwd
         docker build -t docker.io/${{ env.DUSER }}/imagex:vx .
         docker images
     - name: Image Push 
