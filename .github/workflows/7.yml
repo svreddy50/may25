@@ -26,7 +26,7 @@ jobs:
       working-directory: ./may25
       run: |
         pwd
-        docker build -t ghcr.io/${{ env.DUSER }}/imagex:vx .
+        docker build -t ghcr.io/${{ env.DUSER }}/imagex:vy .
         docker images
     - name: Image Push 
       run: |
