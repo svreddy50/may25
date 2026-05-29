@@ -1,0 +1,13 @@
+name: WF-GITHUB_OUTPUT
+on: workflow-dispatch
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      id: build
+      run: |
+         echo "DB_IP=10.0.0.56" >> $GITHUB_OUTPUT
+    - name: PrintMsg
+      run: 
+        echo "DB IP is ${{ steps.build.DB_IP}} "      
