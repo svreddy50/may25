@@ -1,4 +1,4 @@
-name: WF-GITHUB_OUTPUT
+name: WF-GITHUB-OUTPUT
 on: workflow-dispatch
 jobs:
   job1:
