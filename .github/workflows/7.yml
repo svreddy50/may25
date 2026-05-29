@@ -6,6 +6,9 @@ env:
 jobs:
   CI:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
     - name: Checkout the Code
       run: |
@@ -29,9 +32,6 @@ jobs:
         docker build -t ghcr.io/${{ env.DUSER }}/imagex:vx .
         docker images
     - name: Image Push 
-      permissions:
-        contents: read
-        packages: write
       run: |
          docker push ghcr.io/${{ env.DUSER }}/imagex:vx
                   
