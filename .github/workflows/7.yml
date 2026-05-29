@@ -2,7 +2,7 @@ name: Image Build
 on: workflow_dispatch
 env:
   DUSER: ${{ github.repository_owner }}
-  DR_PASSWD: ${{ secrets.DOCKER_REG }}
+  DR_PASSWD: ${{ secrets.GITHUB_TOKEN }}
 jobs:
   CI:
     runs-on: ubuntu-latest
@@ -33,6 +33,7 @@ jobs:
         docker images
     - name: Image Push 
       run: |
+         docker login -u ${{ env.DUSER }} -p ${{ env.DR_PASSWD }}
          docker push ghcr.io/${{ env.DUSER }}/imagex:vx
                   
           
