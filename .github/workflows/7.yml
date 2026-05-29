@@ -33,7 +33,7 @@ jobs:
         docker images
     - name: Image Push 
       run: |
-         docker login -u ${{ env.DUSER }} -p ${{ env.DR_PASSWD }}
+         docker login ghcr.io -u ${{ env.DUSER }} -p ${{ env.DR_PASSWD }}
          docker push ghcr.io/${{ env.DUSER }}/imagex:vx
                   
           
