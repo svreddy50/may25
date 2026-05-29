@@ -9,7 +9,12 @@ jobs:
     steps:
     - name: Checkout the Code
       run: |
+         echo "Before Clone"
+         pwd
+         ls -lrt
          git clone https://github.com/svreddy50/may25.git
+         echo "After Clone"
+         ls -lrt
          cd may25
          ls -lrt
          pwd
