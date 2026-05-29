@@ -1,0 +1,29 @@
+name: Image Build
+on: workflow_dispatch
+env:
+  DUSER: ${{ vars.DUSERNAME }}
+  DR_PASSWD: ${{ secrets.DOCKER_REG }}
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout the Code
+      run: |
+         git clone https://github.com/svreddy50/may25.git
+         ls -lrt
+    - name: Application Build
+      run: |
+         echo "Application Build Started"
+         echo "Application Build Complted"
+    - name: Image build
+      run: |
+        docker info 
+        docker build -i docker.io/${{ env.DUSER }}/imagex:vx
+        docker images
+    - name: Image Push 
+      run: |
+         docker login -u ${{ env.DUSER }} -p ${{ env.DR_PASSWD }}
+         docker push docker.io/${{ env.DUSER }}/imagex:vx
+                  
+          
+         
