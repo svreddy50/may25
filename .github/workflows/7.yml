@@ -10,6 +10,7 @@ jobs:
     - name: Checkout the Code
       run: |
          git clone https://github.com/svreddy50/may25.git
+         cd may25
          ls -lrt
     - name: Application Build
       run: |
