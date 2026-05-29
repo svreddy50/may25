@@ -12,12 +12,14 @@ jobs:
          git clone https://github.com/svreddy50/may25.git
          cd may25
          ls -lrt
+         pwd
     - name: Application Build
       run: |
          echo "Application Build Started"
          echo "Application Build Complted"
     - name: Image build
       run: |
+        pwd
         docker build -t docker.io/${{ env.DUSER }}/imagex:vx .
         docker images
     - name: Image Push 
