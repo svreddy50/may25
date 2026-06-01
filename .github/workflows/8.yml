@@ -3,11 +3,23 @@ on: workflow_dispatch
 jobs:
   job1:
     runs-on: ubuntu-latest
+    outputs:
+      PROD_DB_IP: ${{ steps.build.outputs.DB_IP }}
     steps:
     - name: Checkout
       id: build
       run: |
          echo "DB_IP=10.0.0.56" >> $GITHUB_OUTPUT
+         echo "DB_USER=Sheshi" >> $GITHUB_OUTPUT
     - name: PrintMsg
       run: 
-        echo "DB IP is ${{ steps.build.outputs.DB_IP}} "      
+        echo "DB IP is ${{ steps.build.outputs.DB_IP}} " 
+   job2:
+     runs-on: ubuntu-latest
+     needs: job1
+     steps:
+     - name: TestSteps
+       run: | 
+          echo "DB_IP is ${{ needs.job1.outputs.PROD_DB_IP }}"
+         
+
