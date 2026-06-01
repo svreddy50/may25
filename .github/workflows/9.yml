@@ -9,4 +9,7 @@ jobs:
     - name: Print msgs
       run: |
         echo "Event name is ${{ github.event_name }}"
-        echo "Username is ${{ github.actor }}"        
+        echo "Username is ${{ github.actor }}"     
+        echo "Branch name is ${{ github.ref }}" 
+        echo "Commit Id ${{ github.sha }}"    
+        echo "Repository ${{ github.repository }}"        
