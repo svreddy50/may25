@@ -1,0 +1,12 @@
+name: Github Context Vars
+on:
+  workflow_dispatch:
+  push:
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:  
+    - name: Print msgs
+      run: |
+        echo "Event name is ${{ github.event_name }}"
+        echo "Username is ${{ github.github.actor }}"        
