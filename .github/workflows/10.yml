@@ -4,7 +4,7 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-    - step: This is step1 
+    - name: This is step1 
       run: |
         echo "${{ github }}"
   
