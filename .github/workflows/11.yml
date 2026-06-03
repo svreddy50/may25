@@ -15,8 +15,8 @@ jobs:
       run:
          echo :This is Test Step2"
     - name: Deploy  
+      if: "${{ github.ref_name }}"=='master' 
       run:
         echo "This is Test Step3"      
         
-        
-        
+         
