@@ -8,8 +8,8 @@ jobs:
       run: | 
          echo "${{ github.actor }}"
          echo " Hello World"
-         exit 1
     - name: This is step2  
+      if: 10==100
       run:
          echo :This is Test Step2"
     - name: This is step3  
