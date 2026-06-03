@@ -6,5 +6,5 @@ jobs:
     steps:
     - name: This is step1 
       run: |
-        echo "${{ github }}"
+        echo "${{ toJson(github) }}"
   
