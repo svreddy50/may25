@@ -7,4 +7,6 @@ jobs:
     - name: This is step1 
       run: |
         echo "${{ toJson(github) }}"
+        echo "${{ github.ref }}"
+        echo "${{ github.event.workflow }}"
   
