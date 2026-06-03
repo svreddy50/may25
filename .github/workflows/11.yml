@@ -11,9 +11,8 @@ jobs:
          echo "${{ github.ref }}"
          echo "${{ github.ref_name }}"
     - name: Build 
-      if: 10==100
-      run:
-         echo :This is Test Step2"
+      run: |
+         echo "This is Test Step2"
     - name: Deploy  
       if: "${{ github.ref_name }}"=='master' 
       run:
