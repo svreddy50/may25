@@ -1,7 +1,13 @@
 name: Functions
 on: workflow_dispatch
+env:
+  apptype: IOS
+  onwer: Smaranit
 jobs:
   job1:
+    env:
+      owner: Sheshivardhan
+      env_type: dev      
     runs-on: ubuntu-latest
     steps:
     - name: This is step1 
@@ -9,4 +15,5 @@ jobs:
         echo "${{ toJson(github) }}"
         echo "${{ github.ref }}"
         echo "${{ github.event.workflow }}"
+        echo "${{ toJson(env) }}"
   
