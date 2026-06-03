@@ -11,11 +11,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: This is step1 
+      id: xyz
       run: |
         echo "${{ github.ref }}"
         echo "${{ github.event.workflow }}"
         echo "${{ toJson(env) }}"
         echo "${{ toJson(job) }}"
+    - name: Checkout
+      id: build
+      run: |
+         echo "DB_IP=10.0.0.56" >> $GITHUB_OUTPUT
+         echo "DB_USER=Sheshi" >> $GITHUB_OUTPUT
+    - name: print
+      run: |
+        echo "${{ toJson(steps.build.outputs) }}"      
   
   
   
