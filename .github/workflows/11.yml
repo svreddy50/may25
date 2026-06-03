@@ -9,7 +9,7 @@ jobs:
          echo "${{ github.actor }}"
          echo " Hello World"
          echo "${{ github.ref }}"
-         echo "${{ github.ref_name }}""
+         echo "${{ github.ref_name }}"
     - name: Build 
       if: 10==100
       run:
