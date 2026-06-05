@@ -26,5 +26,10 @@ jobs:
       run: |
          echo " This is Step5 Cancelled"   
          sleep 15
+    - name: This is Step6
+      if : ${{ !cancelled() }}    
+      run: |
+         echo " This is step6 Not Cancelled"   
+         sleep 15     
               
             
