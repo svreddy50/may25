@@ -12,7 +12,8 @@ jobs:
          echo " This is Step2"   
          sleep 15
          exit 1
-    - name: This is Step3   
+    - name: This is Step3
+      if : ${{ failure() }}    
       run: |
          echo " This is Step3"   
          sleep 15
