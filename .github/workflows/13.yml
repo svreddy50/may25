@@ -1,0 +1,9 @@
+name: Functions-1
+on: workflow_dispatch
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+    - name: print tag name
+      run: |
+         echo "${{ github.ref }}"
