@@ -7,15 +7,24 @@ jobs:
     - name: This is Step1
       run: |
           echo " This is Step1"
-        
+          sleep 10
     - name: This is Step2   
       run: |
          echo " This is Step2"   
-         sleep 15
+         sleep 10
     - name: This is Step3
       if : ${{ failure() }}    
       run: |
-         echo " This is Step3"   
+         echo " This is Step3 In case Of Failure"   
+    - name: This is Step4
+      if : ${{ always() }}    
+      run: |
+         echo " This is Step4 always"   
+         sleep 5
+    - name: This is Step5
+      if : ${{ cancelled() }}    
+      run: |
+         echo " This is Step5 Cancelled"   
          sleep 15
-         
+              
             
