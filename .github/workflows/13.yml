@@ -18,11 +18,4 @@ jobs:
       run: |
            echo " Deployment is Sucessful"  
                
-               
-               
-               
-             
-         
-
-refs/heads/master
-refs/tags/rel-v1.3
+       
