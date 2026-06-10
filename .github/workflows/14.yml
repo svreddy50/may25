@@ -16,7 +16,7 @@ jobs:
     - name: print msg
       shell: bash
       run: |
-         echo "This is ${{ matrix.os }}-${{ matrix.swver }}"
+         echo "This is  ${{ matrix.os }}-${{ matrix.swver }}"
 
 
 github.ref
