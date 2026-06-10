@@ -18,7 +18,3 @@ jobs:
       run: |
          echo "This is  ${{ matrix.os }}-${{ matrix.swver }}"
 
-
-github.ref
-github.actor
-runner.os
