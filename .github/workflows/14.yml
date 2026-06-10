@@ -8,8 +8,17 @@ jobs:
         os:
         - ubuntu-latest
         - window-latest
+        swver:
+        - "3.10"
+        - "3.11"
+        - "3.12"
     steps:
     - name: print msg
       shell: bash
       run: |
-         echo "This is ${{ runner.os }}"
+         echo "This is ${{ matrix.os }}-${{ matrix.swver }}"
+
+
+github.ref
+github.actor
+runner.os
