@@ -7,14 +7,27 @@ jobs:
       matrix:
         os:
         - ubuntu-latest
-        - window-latest
         swver:
         - "3.10"
         - "3.11"
         - "3.12"
     steps:
-    - name: print msg
-      shell: bash
+    - name: checkout the code
+      uses: actions/checkout@v6
+    - name: Display File
       run: |
-         echo "This is  ${{ matrix.os }}-${{ matrix.swver }}"
-
+          pwd
+          ls -l
+    - name: Set Up Python
+      uses: actions/setup-python@v6
+      with:
+        python-version: ${{ matrix.swver }}  
+    - name: Run Application
+      run: |
+         python HelloWorld.py
+    
+      
+      
+      
+     
+      
